@@ -38,9 +38,12 @@ Priya, A., Garg, S., & Tigga, N. P. (2020). Predicting anxiety, depression and s
 Kami menyediakan Website Pendeteksi Stress yang dapat mengetahui tingkat stress berdasarkan jawaban kuesioner yang disediakan pada website, yang nanti hasil inputannya akan dimasukkan ke sistem cloud yang dibuat dan diolah menggunakan AI, kemudian hasil luaran website adalah klasifikasi tingkat stress dan rekomendasi hal yang dapat dilakukan untuk mengurangi stress tersebut.
 
 **Rancangan Fitur Solusi:**  
-Stress Detector:	Mendeteksi stress menggunakan kuesioner, kuesionernya menggunakan pertanyaan psikologis yang diisi oleh user, kemudian hasil kuesioner tersebut dimasukkan ke sistem cloud yang lalu akan diolah menggunakan AI, selanjutnya akan menghasilkan keluaran berupa tingkat stress beserta rekomendasi solusi.  
-Rekomendasi solusi:	Hasil stress detector merupakan tingkat stress dari user yang akan digunakan untuk memberikan solusi berupa kegiatan yang dapat menekan tingkat stress.  
-Login user: Mempersonalisasi stress detector sesuai user yang login.
+Stress Detector:  
+Mendeteksi stress menggunakan kuesioner, kuesionernya menggunakan pertanyaan psikologis yang diisi oleh user, kemudian hasil kuesioner tersebut dimasukkan ke sistem cloud yang lalu akan diolah menggunakan AI, selanjutnya akan menghasilkan keluaran berupa tingkat stress beserta rekomendasi solusi.  
+Rekomendasi solusi:  
+Hasil stress detector merupakan tingkat stress dari user yang akan digunakan untuk memberikan solusi berupa kegiatan yang dapat menekan tingkat stress.  
+Login user:  
+Mempersonalisasi stress detector sesuai user yang login.
 
 #### e.	Analisis Kompetitor 
 
