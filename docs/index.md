@@ -1,37 +1,90 @@
-## Welcome to GitHub Pages
+## Selamat datang di Aplikasi TETI-Health 
 
-You can use the [editor on GitHub](https://github.com/renomrcll/TETI-Health/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Nama Kelompok : Seniority
+Ketua Kelompok : Reno Marcello Mohammad - 19/439821/TK/48551
+Anggota 1 : DENNY DEWANTA-19/444045/TK/49241
+Anggota 2 : Adhitya Primandhika - 19/444033/TK/49229
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Project Senior Project TI
 
-### Markdown
+**DEPARTEMEN TEKNIK ELEKTRO DAN TEKNOLOGI INFORMASI
+FAKULTAS TEKNIK UNIVERSITAS GADJAH MADA**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+###### b.	Nama dan Jenis Produk
+**Nama Produk:**
+TETI Health (Stress Detector)
 
-```markdown
-Syntax highlighted code block
+**Jenis Produk:**
+Aplikasi Web
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+###### c.	Permasalahan yang dipecahkan
+**Latar Belakang:**
+Belakangan ini, mahasiswa kerap melakukan budaya Gila Kerja atau Hustle Culture, yang mana memiliki banyak kegiatan seperti perkuliahan, organisasi, dan magang yang dapat menjadikan overwhelm atau kewalahan sehingga meningkatkan tingkat stress pada mahasiswa. Dibutuhkan sebuah solusi yang dapat mendeteksi stress pada mahasiswa menggunakan machine learning.
 
-1. Numbered
-2. List
+Algoritma machine learning dapat digunakan sebagai pengklasifikasi lima tahap dari enxiety, depresi, dan stres menggunakan Decision Tree, Random Forest, Naive Bayes, SVM, dan algoritma lain dengan akurasi di atas 75% (Priya, 2020).
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+**Rumusan Permasalahan:**
+Bagaimana mendeteksi tingkat stress mahasiswa
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+**Daftar Pustaka:**
+Priya, A., Garg, S., & Tigga, N. P. (2020). Predicting anxiety, depression and stress in modern life using machine learning algorithms. Procedia Computer Science, 167, 1258-1267.
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/renomrcll/TETI-Health/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+###### d.	Ide solusi yang diusulkan beserta rancangan fitur
+**Solusi:**
+Kami menyediakan Website Pendeteksi Stress yang dapat mengetahui tingkat stress berdasarkan jawaban kuesioner yang disediakan pada website, yang nanti hasil inputannya akan dimasukkan ke sistem cloud yang dibuat dan diolah menggunakan AI, kemudian hasil luaran website adalah klasifikasi tingkat stress dan rekomendasi hal yang dapat dilakukan untuk mengurangi stress tersebut.
 
-### Support or Contact
+**Rancangan Fitur Solusi:**
+Stress Detector:	Mendeteksi stress menggunakan kuesioner, kuesionernya menggunakan pertanyaan psikologis yang diisi oleh user, kemudian hasil kuesioner tersebut dimasukkan ke sistem cloud yang lalu akan diolah menggunakan AI, selanjutnya akan menghasilkan keluaran berupa tingkat stress beserta rekomendasi solusi.
+Rekomendasi solusi:	Hasil stress detector merupakan tingkat stress dari user yang akan digunakan untuk memberikan solusi berupa kegiatan yang dapat menekan tingkat stress.
+Login user: Mempersonalisasi stress detector sesuai user yang login.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+###### e.	Analisis Kompetitor 
+
+**KOMPETITOR 1**
+Nama: Halodoc
+Jenis Kompetitor: Indirect
+Jenis Produk: Aplikasi
+Target Customer: Semua Umur
+Kelebihan:
+-	Langsung konsultasi ke psikolog
+-	Sudah terkenal di Indonesia
+-	Banyak banyak fitur lainnya	
+Kekurangan:
+-	Berbayar
+-	Tidak fokus ke kesehatan mental-	
+Key Competitive Advantage & Unique Value:
+Banyak layanan dalam satu aplikasi
+
+**KOMPETITOR 2**
+Nama: Riliv
+Jenis Kompetitor: Tertiary Competitors
+Jenis Produk: Aplikasi
+Target Customer: Semua Umur 
+Kelebihan:
+-	Fokus menangani kesehatan mental
+-	Dapat konsultasi ke psikolog	
+Kekurangan:
+-	Belum bisa mendeteksi tingkat stress dengan AI
+
+Key Competitive Advantage & Unique Value:
+Fokus kepada kesehatan mental
+
+**KOMPETITOR 3**
+Nama: Mi Fit
+Jenis Kompetitor: Direct
+Jenis Produk: IoT dan Aplikasi
+Target Customer: Semua Umur
+Kelebihan:
+-	Mendeteksi stress dari sensor Mi Band (jam tangan)
+-	Marketnya besar
+-	Deteksi secara otomatis
+-	Terdapat health report pengguna menggunakan visualisasi data	
+Kekurangan:
+-	Harus beli alatnya
+-	Boros baterai HP karena harus terhubung ke IoT (Bluetooth)
+-	Hanya menampilkan persentase stress, tidak memberikan solusi stress
+Key Competitive Advantage & Unique Value:
+Memiliki aplikasi dan device yang terhubung dengan IoT
