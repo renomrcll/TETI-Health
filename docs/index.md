@@ -40,8 +40,10 @@ Kami menyediakan Website Pendeteksi Stress yang dapat mengetahui tingkat stress 
 **Rancangan Fitur Solusi:**  
 Stress Detector:  
 Mendeteksi stress menggunakan kuesioner, kuesionernya menggunakan pertanyaan psikologis yang diisi oleh user, kemudian hasil kuesioner tersebut dimasukkan ke sistem cloud yang lalu akan diolah menggunakan AI, selanjutnya akan menghasilkan keluaran berupa tingkat stress beserta rekomendasi solusi.  
+
 Rekomendasi solusi:  
 Hasil stress detector merupakan tingkat stress dari user yang akan digunakan untuk memberikan solusi berupa kegiatan yang dapat menekan tingkat stress.  
+
 Login user:  
 Mempersonalisasi stress detector sesuai user yang login.
 
