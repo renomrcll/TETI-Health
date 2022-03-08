@@ -1,9 +1,9 @@
 ## Selamat datang di Aplikasi TETI-Health 
 
-Nama Kelompok : Seniority<br/>
-Ketua Kelompok : Reno Marcello Mohammad - 19/439821/TK/48551<br/> 
-Anggota 1 : DENNY DEWANTA-19/444045/TK/49241  <br/>
-Anggota 2 : Adhitya Primandhika - 19/444033/TK/49229  <br/>
+Nama Kelompok : Seniority  
+Ketua Kelompok : Reno Marcello Mohammad - 19/439821/TK/48551  
+Anggota 1 : DENNY DEWANTA-19/444045/TK/49241  
+Anggota 2 : Adhitya Primandhika - 19/444033/TK/49229  
 
 ## Project Senior Project TI
 
@@ -45,47 +45,47 @@ Login user: Mempersonalisasi stress detector sesuai user yang login.
 ###### e.	Analisis Kompetitor 
 
 **KOMPETITOR 1**  
-Nama: Halodoc
-Jenis Kompetitor: Indirect
-Jenis Produk: Aplikasi
-Target Customer: Semua Umur
-Kelebihan:
+Nama: Halodoc  
+Jenis Kompetitor: Indirect  
+Jenis Produk: Aplikasi  
+Target Customer: Semua Umur  
+Kelebihan:  
 -	Langsung konsultasi ke psikolog
 -	Sudah terkenal di Indonesia
--	Banyak banyak fitur lainnya	
-Kekurangan:
+-	Banyak banyak fitur lainnya	 
+Kekurangan:  
 -	Berbayar
 -	Tidak fokus ke kesehatan mental-	
-Key Competitive Advantage & Unique Value:
+Key Competitive Advantage & Unique Value:  
 Banyak layanan dalam satu aplikasi
 
 **KOMPETITOR 2**  
-Nama: Riliv
-Jenis Kompetitor: Tertiary Competitors
-Jenis Produk: Aplikasi
-Target Customer: Semua Umur 
-Kelebihan:
+Nama: Riliv  
+Jenis Kompetitor: Tertiary Competitors  
+Jenis Produk: Aplikasi  
+Target Customer: Semua Umur  
+Kelebihan:  
 -	Fokus menangani kesehatan mental
--	Dapat konsultasi ke psikolog	
-Kekurangan:
+-	Dapat konsultasi ke psikolog  
+Kekurangan:  
 -	Belum bisa mendeteksi tingkat stress dengan AI
 
-Key Competitive Advantage & Unique Value:
+Key Competitive Advantage & Unique Value:  
 Fokus kepada kesehatan mental
 
 **KOMPETITOR 3**  
-Nama: Mi Fit
-Jenis Kompetitor: Direct
-Jenis Produk: IoT dan Aplikasi
-Target Customer: Semua Umur
-Kelebihan:
+Nama: Mi Fit  
+Jenis Kompetitor: Direct  
+Jenis Produk: IoT dan Aplikasi  
+Target Customer: Semua Umur  
+Kelebihan:  
 -	Mendeteksi stress dari sensor Mi Band (jam tangan)
 -	Marketnya besar
 -	Deteksi secara otomatis
--	Terdapat health report pengguna menggunakan visualisasi data	
-Kekurangan:
+-	Terdapat health report pengguna menggunakan visualisasi data  
+Kekurangan:  
 -	Harus beli alatnya
 -	Boros baterai HP karena harus terhubung ke IoT (Bluetooth)
 -	Hanya menampilkan persentase stress, tidak memberikan solusi stress
-Key Competitive Advantage & Unique Value:
+Key Competitive Advantage & Unique Value:  
 Memiliki aplikasi dan device yang terhubung dengan IoT
