@@ -95,4 +95,39 @@ Kekurangan:
 -	Boros baterai HP karena harus terhubung ke IoT (Bluetooth)
 -	Hanya menampilkan persentase stress, tidak memberikan solusi stress
 
-Key Competitive Advantage & Unique Value: Memiliki aplikasi dan device yang terhubung dengan IoT
+Key Competitive Advantage & Unique Value: Memiliki aplikasi dan device yang terhubung dengan IoT  
+
+
+#### Metodologi SDLC
+**Metodologi yang digunakan:**  
+Waterfall
+
+**Alasan pemilihan metodologi:**  
+1. Pada metode waterfall, tujuan sudah dijelaskan sejelas-jelasnya dari awal. Sehingga pada saat pengerjaan proyek akan fokus pada tujuan yang sudah direncanakan dan disepakati bersama.  
+2. Struktur waterfall sudah sangat jelas yang terbagi dari requirement gathering, system design, implementation, testing, deployment, dan maintenance. Struktur yang jelas akan memudahkan penentuan langkah ke depan akan seperti apa.  
+3. Dapat menjelaskan gambaran besar proyek kepada anggota tim lain maupun orang lain dengan jelas bahkan sebelum proyek dikerjakan.  
+4. Apabila terdapat kesalahan, tidak perlu mengulang dari awal namun dari bagian sebelumnya dengan pola seperti air terjun.  
+
+#### Perancangan Tahap 1-3 SDLC
+**a. Tujuan dari produk :**  
+Agar dapat membantu mahasiswa yang membutuhkan untuk mengecek tingkat stress yang diakibatkan oleh banyaknya aktivitas yang berpotensi menyebabkan terganggunya psikologi mahasiswa tersebut, sekaligus untuk menumbuhkan kepedulian terhadap isu kesehatan mental.
+
+**b. Pengguna potensial dari produk dan kebutuhan para pengguna tersebut**  
+Pengguna potensial dari produk kami adalah para mahasiswa. Kebutuhan dari pengguna tersebut adalah hasil deteksi stres itu sendiri dan bagaimana untuk mengurangi tingkat stres tersebut.  
+
+**c. Use Case Diagram**  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952781138328436796/unknown.png)  
+**d. Functional requirements untuk use case yang telah dirancang**  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952781536988659712/unknown.png)  
+**e. Entity relationship diagram**  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952781067125948496/ERD.drawio_1.png)  
+**f. Low-fidelity Wireframe**  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952782363790807070/unknown.png)  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952782364055068732/unknown.png)  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952782364302508052/unknown.png)  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952782364499652658/unknown.png)  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952783011814993940/unknown.png)  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952782461505531984/unknown.png)  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952782500298620978/unknown.png)  
+**g. Gantt-Chart pengerjaan proyek dalam kurun waktu 1 semester**
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952783407241363516/unknown.png)  
