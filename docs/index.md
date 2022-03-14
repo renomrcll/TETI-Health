@@ -116,7 +116,7 @@ Agar dapat membantu mahasiswa yang membutuhkan untuk mengecek tingkat stress yan
 Pengguna potensial dari produk kami adalah para mahasiswa. Kebutuhan dari pengguna tersebut adalah hasil deteksi stres itu sendiri dan bagaimana untuk mengurangi tingkat stres tersebut.  
 
 **c. Use Case Diagram**  
-![Image](https://cdn.discordapp.com/attachments/693773038843461685/952781138328436796/unknown.png)  
+![Image](https://cdn.discordapp.com/attachments/693773038843461685/952787643547140096/unknown.png)  
 **d. Functional requirements untuk use case yang telah dirancang**  
 ![Image](https://cdn.discordapp.com/attachments/693773038843461685/952781536988659712/unknown.png)  
 **e. Entity relationship diagram**  
