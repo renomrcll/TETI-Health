@@ -2,7 +2,7 @@
 
 Nama Kelompok : Seniority  
 Ketua Kelompok : Reno Marcello Mohammad - 19/439821/TK/48551  
-Anggota 1 : DENNY DEWANTA - 19/444045/TK/49241  
+Anggota 1 : Denny Dewanta - 19/444045/TK/49241  
 Anggota 2 : Adhitya Primandhika - 19/444033/TK/49229  
 
 ## Project Senior Project TI
@@ -131,3 +131,20 @@ Pengguna potensial dari produk kami adalah para mahasiswa. Kebutuhan dari penggu
 ![Image](https://cdn.discordapp.com/attachments/693773038843461685/952782500298620978/unknown.png)  
 **g. Gantt-Chart pengerjaan proyek dalam kurun waktu 1 semester**
 ![Image](https://cdn.discordapp.com/attachments/693773038843461685/952783407241363516/unknown.png)  
+
+**UI**
+![Home 1](https://user-images.githubusercontent.com/59129295/169931651-3ce854d2-7eba-4a9b-987e-89a0640b266f.png)
+![Home 2](https://user-images.githubusercontent.com/59129295/169931672-8dcac0a2-42b1-4469-b584-3723f3b820d4.png)
+![Login](https://user-images.githubusercontent.com/59129295/169931705-1a1fd0b5-7dfe-442e-b8e1-62b8484eb054.png)
+![Register](https://user-images.githubusercontent.com/59129295/169931726-662892b8-5cb1-4d85-ad3f-e1b9f55d082f.png)
+![Add Photo 1](https://user-images.githubusercontent.com/59129295/169931798-dc3dc237-6940-46ee-95ca-708cafe1b63c.png)
+![Add Photo 2](https://user-images.githubusercontent.com/59129295/169931815-3f645512-ae68-4c0f-b6a4-9ad088cb92e6.png)
+![Stress Detection 1](https://user-images.githubusercontent.com/59129295/169931744-c099c38e-d82f-458a-ab98-ffeb9775be70.png)
+![Stress Detection 2](https://user-images.githubusercontent.com/59129295/169931769-b842a31b-db5d-4c7d-adff-82d52b54e89d.png)
+![Stress Detection 3](https://user-images.githubusercontent.com/59129295/169931777-b585c11e-abe6-4a71-bb5a-22fc2b0c1f4e.png)
+![Result](https://user-images.githubusercontent.com/59129295/169931953-853df8e3-f884-4b87-83d2-fc37e91c64fb.png)
+![Advices](https://user-images.githubusercontent.com/59129295/169931995-e6c6b499-8dff-4039-9e78-467bde2ff1f1.png)
+
+
+
+
