@@ -1,0 +1,22 @@
+.dashboard-wrapper{
+    display:flex;
+    width: 100vw;
+
+}
+.main{
+    width: 100%;
+    padding-top: 50px;
+}
+.top{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.top>div{
+    box-shadow: 2px 2px 10px 2px #413e3e;
+    width: 35vw;
+    padding: 10px;
+    border-radius: 10px;
+}
