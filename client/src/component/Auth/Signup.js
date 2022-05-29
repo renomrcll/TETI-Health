@@ -7,7 +7,8 @@ export default class Signup extends React.Component {
             firstName:"",
             lastName:"",
             email:"",
-            password:""
+            password:"",
+            tab : "signup"
         };
     }
     
@@ -35,7 +36,7 @@ export default class Signup extends React.Component {
                         <div className="input-text">Confirm Password</div>
                         <input type="password" placeholder="Confirm Password" value={this.state.confirmPassword} onChange={e => this.setState({confirmPassword: e.target.value})}/>
                     </div>
-                    <div className="btn" id="btn-signup" onClick= {()=> this.props.signUp({...this.state})}>Sign Up</div>
+                    <div className="btn" id="btn-signup" onClick= {()=> {this.props.signUp({...this.state});this.setState({tab:'signin'});}}>Sign Up</div>
                 </div>
             </div>
         );
