@@ -23,14 +23,11 @@ const loginUser = async (req,res)=>{
                             name: user.firstName
                         };
                         jwt.sign(payload, process.env.APP_SECRET, {expiresIn: 2155926}, (err, token)=>{
-                            res.json({
-                                user,
-                                success: true,
-                                token: 'Bearer ' + token
+                            res.json({userData, success: true, token: 'Bearer ' + token,message: 'Login successful'
                             });
                         });
                     } else {
-                        res.json({success: false, error: 'Password incorrect'});
+                        res.json({success: false, error: 'Password is incorrect'});
                     }
                 })
                 .catch(err=>{
@@ -62,9 +59,10 @@ const createUser = async (req, res)=>{
             const salt = await bcrypt.genSalt(10);
             registerUser.password = await bcrypt.hash(password, salt);
             await registerUser.save();
-            res.json({success: true, message: 'User registered successfully'});
+            res.json({success: true, message: 'User created successfully'});
         } catch (error) {
-            res.json({success: false, message: error.message});
+            errors.email = 'Email already exists';
+            res.json({success: false, errors});
         }
     }
 }
@@ -75,7 +73,7 @@ const getUser = (req,res)=>{
         if(!user){
             res.json({success: false, error: 'User not found'});
         } else {
-            res.json({success: true, user});
+            res.json({success: true, user,message:"User found"});
         }
     })
     .catch(err=>{
@@ -105,28 +103,55 @@ const uploadAvatar = async(req, res) => {
 }
 
 const updateUser = async (req, res)=>{
+    const {firstName, lastName, email, password} = req.body;
+    const updateUser = {
+        firstName,
+        lastName,
+        email,
+        updatedAt: Date.now()
+    };
+    try {
+        const salt = await bcrypt.genSalt(10);
+        updateUser.password = await bcrypt.hash(password, salt);
+        await Users.findOneAndUpdate({_id: req.params.id}, updateUser);
+        res.json({success: true, message: 'User updated successfully'});
+    } catch (error) {
+        res.json({success: false, message: error.message});
+    }
+}
+
+const changePassword = async (req, res)=>{
     const {errors, isValid} = registerValidator(req.body);
     if(!isValid){
         res.json({success: false, errors});
     } else {
-        const {firstName, lastName, email, password} = req.body;
-        const updateUser = {
-            firstName,
-            lastName,
-            email,
-            password,
-            createdAt: Date.now()
-        };
-        try {
-            const salt = await bcrypt.genSalt(10);
-            updateUser.password = await bcrypt.hash(password, salt);
-            await Users.findOneAndUpdate({_id: req.params.id}, updateUser);
-            res.json({success: true, message: 'User updated successfully'});
-        } catch (error) {
-            res.json({success: false, message: error.message});
-        }
+        const {password, newPassword} = req.body;
+        Users.findOne({_id: req.params.id})
+        .then(user=>{
+            if(!user){
+                res.json({success: false, error: 'User not found'});
+            } else {
+                bcrypt.compare(password, user.password)
+                .then(isMatch=>{
+                    if(isMatch){
+                        const salt = bcrypt.genSaltSync(10);
+                        user.password = bcrypt.hashSync(newPassword, salt);
+                        user.save();
+                        res.json({success: true, message: 'Password changed successfully'});
+                    } else {
+                        res.json({success: false, error: 'Password incorrect'});
+                    }
+                })
+                .catch(err=>{
+                    res.json({success: false, error: err});
+                });
+            }
+        })
+        .catch(err=>{
+            res.json({success: false, error: err});
+        });
     }
 }
 
 
-module.exports = {loginUser, createUser, getUser, uploadAvatar,updateUser};
+module.exports = {loginUser, createUser, getUser, uploadAvatar,updateUser,changePassword};
