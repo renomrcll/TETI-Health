@@ -24,6 +24,101 @@ class Index(Resource):
     @cross_origin()
     def get(self):
         return jsonify({'message': 'Hello world!!!'})
+    
+def machine_learning(q1,q2,q3,q4,q5,q6,q7):
+    results = {}
+    results['class'] = ''
+    results['advice'] = []
+    df = pd.read_json('data/Dataset.json') # nanti path nya nyesuain
+    print(df.head())
+    print()
+
+    print(df['Class'].value_counts())
+    print()
+
+    x = df.loc[:, df.columns != 'Class']
+    print('x')
+    print(x)
+    print()
+    y = df['Class']
+    print('y')
+    print(y)
+    print()
+        
+    seed = 100
+    k = 1
+    sm = SMOTE(sampling_strategy='auto', k_neighbors=k, random_state=seed)
+    x_res, y_res = sm.fit_resample(x, y)
+
+    print('y :', Counter(y))
+    print('y_res :', Counter(y_res))
+    print()
+
+    x_train, x_test, y_train, y_test = train_test_split(x_res, y_res, test_size=0.2, random_state=4)
+    print ('Train set :', x_train.shape, y_train.shape)
+    print ('Test set :', x_test.shape, y_test.shape)
+    print()
+
+    clf = svm.SVC(kernel='rbf', gamma='auto')
+    clf.fit(x_train, y_train)
+
+    prediction = clf.predict(x_test)
+    print('Prediction Test')
+    print(prediction[0:5])
+    print()
+
+    print('Classification Report')
+    print(classification_report(y_test, prediction))
+    print()
+
+    print("F1 Score :",f1_score(y_test, prediction, average='weighted'))
+    print("Jaccard Score :",jaccard_score(y_test, prediction, average='macro'))
+    print()
+        
+    # Predict stress class
+    data = np.asarray([[q1,q2,q3,q4,q5,q6,q7]])
+        
+    prediction = clf.predict(data)
+    print('Prediction :', prediction[0])
+
+    if prediction[0] == 0:
+        results['class'] = 'Normal'
+        # Fungsi narik data advice dari cloud untuk tipe Normal
+        # results['advices'] = list data advice
+    elif prediction[0] == 1:
+        results['class'] = 'Mild'
+        # Fungsi narik data advice dari cloud untuk tipe Mild
+        # results['advices'] = list data advice
+    elif prediction[0] == 2:
+        results['class'] = 'Moderate'
+        # Fungsi narik data advice dari cloud untuk tipe Moderate
+        # results['advices'] = list data advice
+    elif prediction[0] == 3:
+        results['class'] = 'Severe'
+        # Fungsi narik data advice dari cloud untuk tipe Severe
+        # results['advices'] = list data advice
+    elif prediction[0] == 4:
+        results['class'] = 'Extremely Severe'
+        # Fungsi narik data advice dari cloud untuk tipe Extremely Severe
+        # results['advices'] = list data advice
+
+    print('Prediction of Class :', results['class'])
+    print()
+
+    # Add new data to dataset
+    df.loc[1+len(df)] = [q1,q2,q3,q4,q5,q6,q7,prediction[0]]
+    print(df)
+    print()
+
+    print(df['Class'].value_counts())
+    print()
+
+    print("Length of Dataframe :",len(df))
+    print()
+
+    df.to_json(r'data/Dataset.json') # nanti path nya nyesuain
+    
+    return results
 
 api_namespace = api.namespace(
     'api', description='To request data')
@@ -52,100 +147,7 @@ class StressDetection(Resource):
         Q7 = args['Q7'] or None
         
         # Machine Learning
-        df = pd.read_json('data/Dataset.json') # nanti path nya nyesuain
-        print(df.head())
-        print()
-
-        print(df['Class'].value_counts())
-        print()
-
-        x = df.loc[:, df.columns != 'Class']
-        print('x')
-        print(x)
-        print()
-        y = df['Class']
-        print('y')
-        print(y)
-        print()
-        
-        seed = 100
-        k = 1
-        sm = SMOTE(sampling_strategy='auto', k_neighbors=k, random_state=seed)
-        x_res, y_res = sm.fit_resample(x, y)
-
-        print('y :', Counter(y))
-        print('y_res :', Counter(y_res))
-        print()
-
-        x_train, x_test, y_train, y_test = train_test_split(x_res, y_res, test_size=0.2, random_state=4)
-        print ('Train set :', x_train.shape, y_train.shape)
-        print ('Test set :', x_test.shape, y_test.shape)
-        print()
-
-        clf = svm.SVC(kernel='rbf', gamma='auto')
-        clf.fit(x_train, y_train)
-
-        prediction = clf.predict(x_test)
-        print('Prediction Test')
-        print(prediction[0:5])
-        print()
-
-        print('Classification Report')
-        print(classification_report(y_test, prediction))
-        print()
-
-        print("F1 Score :",f1_score(y_test, prediction, average='weighted'))
-        print("Jaccard Score :",jaccard_score(y_test, prediction, average='macro'))
-        print()
-
-        
-        # Result
-        results = {}
-        results['class'] = ''
-        results['advice'] = []
-
-        # Predict stress class
-        data = np.asarray([[Q1,Q2,Q3,Q4,Q5,Q6,Q7]])
-        
-        prediction = clf.predict(data)
-        print('Prediction :', prediction[0])
-
-        if prediction[0] == 0:
-            results['class'] = 'Normal'
-            # Fungsi narik data advice dari cloud untuk tipe Normal
-            # results['advices'] = list data advice
-        elif prediction[0] == 1:
-            results['class'] = 'Mild'
-            # Fungsi narik data advice dari cloud untuk tipe Mild
-            # results['advices'] = list data advice
-        elif prediction[0] == 2:
-            results['class'] = 'Moderate'
-            # Fungsi narik data advice dari cloud untuk tipe Moderate
-            # results['advices'] = list data advice
-        elif prediction[0] == 3:
-            results['class'] = 'Severe'
-            # Fungsi narik data advice dari cloud untuk tipe Severe
-            # results['advices'] = list data advice
-        elif prediction[0] == 4:
-            results['class'] = 'Extremely Severe'
-            # Fungsi narik data advice dari cloud untuk tipe Extremely Severe
-            # results['advices'] = list data advice
-
-        print('Prediction of Class :', results['class'])
-        print()
-
-        # Add new data to dataset
-        df.loc[1+len(df)] = [Q1,Q2,Q3,Q4,Q5,Q6,Q7,prediction[0]]
-        print(df)
-        print()
-
-        print(df['Class'].value_counts())
-        print()
-
-        print("Length of Dataframe :",len(df))
-        print()
-
-        df.to_json(r'data/Dataset.json') # nanti path nya nyesuain
+        results = machine_learning(Q1, Q2, Q3, Q4, Q5, Q6, Q7)
 
         return jsonify(results) 
 
