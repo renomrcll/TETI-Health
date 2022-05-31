@@ -10,6 +10,7 @@ from flask_cors import CORS, cross_origin
 from flask_restx import fields, Resource, Api, reqparse
 from config import config
 import json
+import time
 
 app = Flask(__name__)
 api = Api(app=app,
@@ -147,7 +148,12 @@ class StressDetection(Resource):
         Q7 = args['Q7'] or None
         
         # Machine Learning
+        start = time.time()
         results = machine_learning(Q1, Q2, Q3, Q4, Q5, Q6, Q7)
+        end = time.time()
+        total_time = end - start
+        print("Time Execution :", str(total_time))
+        print()
 
         return jsonify(results) 
 
