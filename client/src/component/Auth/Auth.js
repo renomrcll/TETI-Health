@@ -56,6 +56,7 @@ export default class Auth extends React.Component {
         }
         );
     };
+
     changeTab = () => {
         this.setState({
             tab : this.state.tab === "signup" ? "signin" : "signup"
@@ -67,6 +68,9 @@ export default class Auth extends React.Component {
     return (
         <div className="auth-wrapper">
             <div className="left-wrapper">
+                <div className="img-wrapper">
+                    <img src="" alt="logo"/>
+                </div>
 
             </div>
             <div className="right-wrapper">
