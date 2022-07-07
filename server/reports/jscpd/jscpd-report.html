@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>jscpd, Copy/Paste Detector</title><link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"><script>function collapseExpandAll() {
+    document.querySelectorAll('.clone').forEach(function (cloneElement) {
+        cloneElement.classList.remove('expanded');
+    });
+    document.querySelector('.clones').classList.toggle('collapsed');
+}
+
+function expandCollapse(event) {
+    if (event.target.classList.contains('expand') || event.target.classList.contains('collapse')) {
+        this.classList.toggle('expanded');
+    }
+
+}
+
+window.onload = function () {
+
+    var codes = document.querySelectorAll('pre');
+
+
+    codes.forEach(function (code) {
+        code.innerHTML = '<span class="line-number"></span>' + code.innerHTML + '<span class="cl"></span>';
+
+        var length = parseInt(code.getAttribute('data-length'));
+        var firstStart = parseInt(code.getAttribute('data-first-start'));
+        var secondStart = parseInt(code.getAttribute('data-second-start'));
+
+        for (var j = 0; j <= length; j++) {
+            var line_num = code.getElementsByTagName('span')[0];
+            line_num.innerHTML += '<span>' + (firstStart + j) + ' ' + (secondStart + j) + '</span>';
+        }
+
+    });
+
+    document.querySelectorAll('.clone').forEach(function (cloneElement) {
+        cloneElement.addEventListener('click', expandCollapse)
+    });
+}
+</script><style>* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+#layout {
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.sidebar {
+    background: rgb(61, 79, 93);
+    color: #fff;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.nav-item a {
+    background: transparent;
+    border: 2px solid rgb(176, 202, 219);
+    color: #fff;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
+
+.content-subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 120%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.content {
+    padding: 2em 1em 0;
+}
+
+.clone {
+    padding-bottom: 2em;
+
+}
+
+.clone header button {
+    float: left;
+    font-size: 110%;
+    margin: 0.1em 0.3em;
+}
+
+.clone .expand {
+    display: none;
+}
+
+.clone .collapse {
+    display: block;
+}
+
+.collapsed .clone pre {
+    display: none;
+}
+
+.collapsed .clone .expand {
+    display: block;
+}
+
+.collapsed .clone .collapse {
+    display: none;
+}
+
+.clone.expanded .expand {
+    display: none !important;
+}
+
+.clone.expanded .collapse {
+    display: block !important;
+}
+
+.clone.expanded pre {
+    display: block !important;
+}
+
+.clone pre {
+    max-width: 800px;
+}
+
+.clone pre .line-number {
+    font: normal normal 12px/14px "Courier New", Courier, Monospace;
+    display: block;
+    float: left;
+    margin: 0 1em 0 -1em;
+    border-right: 0.1em solid #444;
+    text-align: right;
+}
+
+.clone pre .line-number span {
+    display: block;
+    padding: 0 .5em 0 1em;
+
+}
+
+.clone pre .cl {
+    display: block;
+    clear: both;
+}
+
+.clone-title {
+    font-size: 1.1em;
+    color: #222;
+    margin-bottom: 0.2em;
+}
+
+.clone-description {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.1em;
+    font-size: 80%;
+}
+
+.controls {
+    text-align: right;
+}
+
+.controls button {
+    font-size: 70%;
+}
+
+.mode-stats {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.mode-rate {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+
+.stats {
+    width: 100%;
+    margin: 1em 0;
+}
+
+.clones-excellent {
+    background: #5aba59;
+}
+
+.clones-fine {
+    background: #4d85d1;
+}
+
+.clones-danger {
+    background: #df2d4f;
+}
+
+.footer {
+    padding: 1em 0;
+    color: #999;
+    font-size: 70%;
+}
+
+@media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+    }
+
+    .header {
+        text-align: right;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        width: 25%;
+        bottom: 0;
+        padding: 1em;
+    }
+
+    .footer {
+        text-align: center;
+
+    }
+}</style></head><body><div class="pure-g" id="layout"><div class="sidebar pure-u-1 pure-u-md-1-4"><div class="header"><img src="https://raw.githubusercontent.com/kucherenko/jscpd/1.0.0-alpha/assets/logo-small-box.svg?sanitize=true" width="190"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="pure-button" href="#json">json</a></li><li class="nav-item"><a class="pure-button" href="#javascript">javascript</a></li></ul></nav></div></div><div class="content pure-u-1 pure-u-md-3-4"><div class="controls"><div class="pure-u"><button class="pure-button" onclick="collapseExpandAll()">Collapse/Expand All</button></div></div><table class="pure-table stats"><thead><tr><th>Total files</th><th>Total lines of code</th><th>Duplicated lines</th><th>% of duplications</th></tr></thead><tbody><tr><td>11</td><td>617</td><td>102</td><td>16.53%</td></tr></tbody></table><div class="clones collapsed"><a name="json"></a><h1 class="content-subhead">json</h1><div class="mode-stats"><p><span class="mode-rate">0%</span> Total files: 2, total lines of code: 37, duplicated lines: 0</p></div><a name="javascript"></a><h1 class="content-subhead">javascript</h1><div class="mode-stats"><p><span class="mode-rate">17.59%</span> Total files: 9, total lines of code: 580, duplicated lines: 102</p></div><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/controllers/Users.js[140:78 - 155:7]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/controllers/Users.js[30:81 - 44:6]</div></header><div class="clone-description"><pre data-first-start="140" data-second-start="30" data-length="15">});
+                    }
+                })
+                .catch(err=&gt;{
+                    res.json({success: false, error: err});
+                });
+            }
+        })
+        .catch(err=&gt;{
+            res.json({success: false, error: err});
+        });
+    }
+}
+
+
+module</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/models/Users.js[26:5 - 48:53]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/models/Question.js[9:5 - 31:53]</div></header><div class="clone-description"><pre data-first-start="26" data-second-start="9" data-length="22">},
+    avatar: {
+        type: Object,
+        required: false,
+        contains: {
+            url: {
+                type: String,
+                required: false
+            },
+            public_id: {
+                type: String,
+                required: false
+            }
+        }
+    },
+    deleted: {
+        type: Boolean,
+        default: false
+    }
+
+});
+
+module.exports = mongoose.model('User', UserSchema);</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[37:36 - 46:67]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[16:38 - 25:66]</div></header><div class="clone-description"><pre data-first-start="37" data-second-start="16" data-length="9">,
+            password: 'diabolic22'
+        }
+        chai
+            .request(server)
+            .post('/login')
+            .send(user)
+            .end((err, res) =&gt; {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eql(false</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[59:9 - 68:64]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[18:9 - 48:61]</div></header><div class="clone-description"><pre data-first-start="59" data-second-start="18" data-length="9">}
+        chai
+            .request(server)
+            .post('/login')
+            .send(user)
+            .end((err, res) =&gt; {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eql(false);
+                res.body.should.have.property('errors');
+                res.body.errors.should.have.property('password'</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[79:9 - 88:83]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[18:9 - 48:85]</div></header><div class="clone-description"><pre data-first-start="79" data-second-start="18" data-length="9">}
+        chai
+            .request(server)
+            .post('/login')
+            .send(user)
+            .end((err, res) =&gt; {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eql(false);
+                res.body.should.have.property('errors');
+                res.body.errors.should.have.property('email').eql('User not found'</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[106:30 - 112:89]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[42:27 - 48:85]</div></header><div class="clone-description"><pre data-first-start="106" data-second-start="42" data-length="6">)
+            .send(user)
+            .end((err, res) =&gt; {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eql(false);
+                res.body.should.have.property('errors');
+                res.body.errors.should.have.property('email').eql('Email already exists'</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[126:9 - 135:110]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[103:9 - 68:93]</div></header><div class="clone-description"><pre data-first-start="126" data-second-start="103" data-length="9">}
+        chai
+            .request(server)
+            .post('/register')
+            .send(user)
+            .end((err, res) =&gt; {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eql(false);
+                res.body.should.have.property('errors');
+                res.body.errors.should.have.property('password').eql('Password must be at least 6 characters'</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[177:38 - 187:66]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[100:38 - 110:67]</div></header><div class="clone-description"><pre data-first-start="177" data-second-start="100" data-length="10">,
+            password: 'diabolic22',
+            confirmPassword: 'diabolic22'
+        }
+        chai
+            .request(server)
+            .post('/register')
+            .send(user)
+            .end((err, res) =&gt; {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eql(true</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[183:30 - 188:89]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/test/test.js[21:27 - 26:80]</div></header><div class="clone-description"><pre data-first-start="183" data-second-start="21" data-length="5">)
+            .send(user)
+            .end((err, res) =&gt; {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eql(true);
+                res.body.should.have.property('message').eql('User created successfully'</pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/validators/validators.js[39:5 - 47:11]<br/>C:/xampp/htdocs/rest-api/react-app/TETI-Health/server/validators/validators.js[9:5 - 19:11]</div></header><div class="clone-description"><pre data-first-start="39" data-second-start="9" data-length="8">if(validator.isEmpty(data.email)){
+        errors.email = 'Email field is required';
+    } else if(!validator.isEmail(data.email)){
+        errors.email = 'Email is invalid';
+    }
+
+    if(validator.isEmpty(data.password)){
+        errors.password = 'Password field is required';
+    } else</pre></div></section></div><div class="footer"><p>© 2013-2018 jscpd, copy/paste detector</p></div></div></div></body></html>

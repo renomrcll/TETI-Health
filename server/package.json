@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "mocha test/*.js --exit",
+    "jscpd": "jscpd ."
   },
   "keywords": [],
   "author": "reno marcello",
@@ -19,6 +21,7 @@
     "express": "^4.18.1",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^10.0.0",
     "mongoose": "^6.3.4",
     "passport": "^0.6.0",
     "validator": "^13.7.0"

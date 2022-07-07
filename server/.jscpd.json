@@ -1,0 +1,7 @@
+{
+    "threshold": 0,
+    "reporters": ["html", "console"],
+    "ignore": ["**/node_modules/**","**/reports/**","**/.idea/**"],
+    "absolute": true,
+    "output":"reports/jscpd/"
+  }
