@@ -58,3 +58,28 @@ module.exports.registerValidator=(data) => {
         isValid: isEmpty(errors)
     } 
 }
+
+module.exports.newPasswordValidator=(data) => {
+    let errors = {};
+    data.password = !isEmpty(data.password) ? data.password : '';
+    data.newPassword = !isEmpty(data.newPassword) ? data.newPassword : '';
+    data.confirmPassword = !isEmpty(data.confirmPassword) ? data.confirmPassword : '';
+    if(validator.isEmpty(data.password)){
+        errors.password = 'Password field is required';
+    }
+    if(validator.isEmpty(data.newPassword)){
+        errors.newPassword = 'New Password field is required';
+    } else if(!validator.isLength(data.newPassword, { min: 6 })){
+        errors.newPassword = 'Password must be at least 6 characters';
+    }
+    if(validator.isEmpty(data.confirmPassword)){
+        errors.confirmPassword = 'Confirm Password field is required';
+    } else if(!validator.equals(data.newPassword, data.confirmPassword)){
+        errors.confirmPassword = 'Passwords must match';
+    }
+
+    return {
+        errors,
+        isValid: isEmpty(errors)
+    } 
+}
