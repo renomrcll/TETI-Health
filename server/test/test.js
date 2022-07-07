@@ -13,7 +13,7 @@ const server = 'http://localhost:5000/api/users/';
 describe('POST /login', () => {
     it('it should return success: true, message :"Login Successful", and token', (done) => {
         const user = {
-            email: 'loyd@gmail.com',
+            email: 'forger@gmail.com',
             password: 'diabolic22'
         }
         chai
@@ -34,7 +34,7 @@ describe('POST /login', () => {
 describe('POST /login', () => {
     it('it should return Email is invalid ', (done) => {
         const user = {
-            email: 'loydmail.com',
+            email: 'forgermail.com',
             password: 'diabolic22'
         }
         chai
@@ -54,7 +54,7 @@ describe('POST /login', () => {
 describe('POST /login', () => {
     it('it should return password incorrect ', (done) => {
         const user = {
-            email: 'loyd@gmail.com',
+            email: 'forger@gmail.com',
             password: 'diabolic2',
         }
         chai
@@ -74,7 +74,7 @@ describe('POST /login', () => {
 describe('POST /login', () => {
     it('it should return email not found ', (done) => {
         const user = {
-            email: 'loyd22@gmail.com',
+            email: 'forger22@gmail.com',
             password: 'diabolic2'
         }
         chai
